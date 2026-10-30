@@ -1,0 +1,112 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+
+<section class="registration-section">
+    <div class="registration-container">
+
+        <div class="registration-info">
+            <span class="welcome-tag">JOIN OUR COMMUNITY</span>
+            <h1>Create Your <span>Account.</span></h1>
+            <p>
+                Join us today and discover a better way to manage
+                your products, explore services, and stay connected.
+            </p>
+
+            <div class="registration-benefits">
+                <div class="benefit">
+                    <span class="benefit-icon">✓</span>
+                    <span>Quick and easy registration</span>
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">✓</span>
+                    <span>Secure account access</span>
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">✓</span>
+                    <span>Access your account anytime</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="registration-form-card">
+            <div class="form-heading">
+                <h2>Sign Up</h2>
+                <p>Create your account to get started.</p>
+            </div>
+
+            <form method="POST" action="">
+                {% csrf_token %}
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname"
+                               placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username"
+                               placeholder="Choose a username" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="Enter your phone number"
+                           pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password"
+                               placeholder="Create password" minlength="8" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" id="confirm_password"
+                               name="confirm_password"
+                               placeholder="Confirm password"
+                               minlength="8" required>
+                    </div>
+                </div>
+
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">
+                        I agree to the Terms of Service and Privacy Policy.
+                    </label>
+                </div>
+
+                <button type="submit" class="register-button">
+                    Create Account <span>→</span>
+                </button>
+
+                <p class="login-text">
+                    Already have an account?
+                    <a href="{% url 'home' %}">Login</a>
+                </p>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

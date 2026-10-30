@@ -1,0 +1,102 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+<section class="contact-section">
+
+    <div class="contact-heading">
+        <span class="contact-tag">GET IN TOUCH</span>
+        <h1>Contact <span>Us</span></h1>
+        <p>Have a question or suggestion? We'd love to hear from you.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>Let's Talk</h2>
+            <p class="info-description">
+                Contact us anytime. Our team is happy to help
+                you with your questions and feedback.
+            </p>
+
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div>
+                    <h3>Our Location</h3>
+                    <p>Your business address here</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📧</div>
+                <div>
+                    <h3>Email Address</h3>
+                    <p>yourname@example.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📞</div>
+                <div>
+                    <h3>Phone Number</h3>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+
+            <div class="contact-socials">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+            <h2>Send Us a Message</h2>
+            <p>Fill in the form below and we'll get back to you.</p>
+
+            <form method="POST" action="">
+                {% csrf_token %}
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name"
+                               placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject"
+                           placeholder="Enter message subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5"
+                              placeholder="Write your message here..."
+                              required></textarea>
+                </div>
+
+                <button type="submit" class="contact-btn">
+                    Send Message →
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

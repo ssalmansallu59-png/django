@@ -1,0 +1,343 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Brand Footer</title>
+
+
+<!-- <link rel="stylesheet" href="{% static 'css/footer.css' %}"> -->
+<style>
+    /* ==========================================
+   Modern Brand Footer Stylesheet
+   ========================================== */
+
+/* CSS Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --footer-bg: #0f172a;       /* Deep slate background */
+    --footer-text: #94a3b8;     /* Muted grey text */
+    --footer-heading: #f8fafc;  /* Bright white heading text */
+    --footer-accent: #38bdf8;   /* Vibrant blue accent */
+    --footer-border: #1e293b;   /* Subtle border color */
+    --footer-hover: #e2e8f0;    /* Hover text color */
+}
+
+/* Footer Main Container */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    padding: 80px 20px 30px;
+    line-height: 1.6;
+}
+
+/* Inner Grid Layout */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 40px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--footer-border);
+}
+
+/* Brand Section */
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--footer-heading);
+    margin-bottom: 16px;
+}
+
+.brand span {
+    color: var(--footer-accent);
+}
+
+.brand-description {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    color: var(--footer-text);
+    max-width: 320px;
+}
+
+/* Social Icons */
+.socials {
+    display: flex;
+    gap: 12px;
+}
+
+.socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: var(--footer-border);
+    color: var(--footer-heading);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.socials a:hover {
+    background-color: var(--footer-accent);
+    color: #0f172a;
+    transform: translateY(-3px);
+}
+
+/* Headings */
+.footer h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--footer-heading);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Footer Navigation Links */
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--footer-hover);
+    padding-left: 4px; /* Subtle shift effect */
+}
+
+/* Newsletter Section */
+.newsletter p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 8px;
+    background-color: var(--footer-border);
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 12px;
+}
+
+.newsletter input[type="email"] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px 12px;
+    color: var(--footer-heading);
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.newsletter input[type="email"]::placeholder {
+    color: #64748b;
+}
+
+.newsletter button {
+    background-color: var(--footer-accent);
+    color: #0f172a;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter button:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+#message {
+    font-size: 0.85rem;
+    color: var(--footer-accent);
+    min-height: 20px;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.bottom-links {
+    display: flex;
+    gap: 24px;
+}
+
+.bottom-links a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.bottom-links a:hover {
+    color: var(--footer-heading);
+}
+
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .bottom-links {
+        justify-content: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand Information -->
+        <div>
+            <div class="brand">Your<span>Brand.</span></div>
+
+            <p class="brand-description">
+                Building meaningful experiences through creativity,
+                innovation, and quality. Discover a better way to
+                connect with what matters to you.
+            </p>
+
+            <div class="socials">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">ig</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="YouTube">▶</a>
+            </div>
+        </div>
+
+        <!-- Explore -->
+        <div>
+            <h3>Explore</h3>
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Our Projects</a></li>
+                <li><a href="#">Latest News</a></li>
+            </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div>
+            <h3>Useful Links</h3>
+            <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+            <h3>Stay in the Loop</h3>
+
+            <p>
+                Get the latest updates, news, and exclusive
+                insights delivered straight to your inbox.
+            </p>
+
+            <form onsubmit="subscribe(event)">
+                <input type="email"
+                       placeholder="Enter your email"
+                       aria-label="Email address"
+                       required>
+
+                <button type="submit" aria-label="Subscribe">
+                    →
+                </button>
+            </form>
+
+            <p id="message" role="status" aria-live="polite"></p>
+        </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>© <span id="year"></span> YourBrand. All rights reserved.</p>
+
+        <div class="bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+        </div>
+
+        <p>Designed with ♥</p>
+    </div>
+
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+function subscribe(event) {
+    event.preventDefault();
+    document.getElementById("message").textContent =
+        "Demo form — connect a newsletter service to subscribe.";
+}
+</script>
+
+</body>
+</html>
