@@ -1,0 +1,45 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+<h1>Admin DASHBOARD</h1>
+
+<!-- {% if data %}
+    {% for i in data %}
+        <h1>{{ i }}</h1>
+    {% endfor %}
+{% endif %} -->
+ 
+<table>
+
+        <tr>
+            <th>Full Name</th>
+            <th>Username</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Gender</th> 
+            <th>image</th> 
+            <th>udpdate</th>   
+            <th>delete</th>       
+         </tr>
+
+        {% if mydata %}
+            {% for i in mydata %}
+            <tr>
+                <td>{{ i.fullname }}</td>
+                <td>{{ i.username }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.phone }}</td>
+                <td>{{ i.gender }}</td>
+                <td><img style="width: 100px; height:80px;" src="{{ i.image.url }}" alt="Profile image"></td> 
+                <td><a href="{% url 'update' i.id %}">update</a></td>   
+                <td><a href="{% url 'delete' i.id %}">delete</a></td>            
+            </tr>
+            {% endfor %}
+        {% endif %}
+</table>
+
+
+
+
+

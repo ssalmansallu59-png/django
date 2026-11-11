@@ -1,0 +1,32 @@
+<h1>registration_view</h1>
+
+
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+
+
+
+    <label for="">Full Name</label>
+    <input type="text" name="full_name"><br>
+        <p>{{ dataregister.errors.full_name }}</p>
+
+
+    <label for="">Username</label>
+    <input type="text" name="username"><br>
+        <p>{{ dataregister.errors.username }}</p>
+
+    <label for="">Email</label>
+    <input type="email" name="email"><br>
+        <p>{{ dataregister.errors.email }}</p>
+
+
+    <label for="">Password</label>
+    <input type="password" name="password"><br>
+
+
+    <button type="submit">register</button>
+
+
+</form>

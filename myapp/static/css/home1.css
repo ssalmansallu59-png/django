@@ -96,7 +96,7 @@ label {
 }
 
 /* Inputs */
-input[type="email"],
+input[type="text"],
 input[type="password"] {
     width: 100%;
     background-color: var(--input-bg);
@@ -110,7 +110,7 @@ input[type="password"] {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input[type="email"]:focus,
+input[type="text"]:focus,
 input[type="password"]:focus {
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);

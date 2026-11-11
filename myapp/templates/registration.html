@@ -5,7 +5,8 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'css/registration.css' %}"> -->
+ <link rel="stylesheet" href="{% static 'css/registration.css' %}">
 
 <section class="registration-section">
     <div class="registration-container">
@@ -42,8 +43,15 @@
                 <p>Create your account to get started.</p>
             </div>
 
-            <form method="POST" action="">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
+                
+
+                <div class="form-group">
+                <label for="file">Product Image</label>
+                <input type="file" id="file" name="image" required>
+                </div>
+
 
                 <div class="form-row">
                     <div class="form-group">
@@ -70,6 +78,19 @@
                     <input type="tel" id="phone" name="phone"
                            placeholder="Enter your phone number"
                            pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+
+                
+                <div class="form-radio">
+                    <label>Gender</label>
+
+                    <span>
+                        <input type="radio" name="gender" value="Male" required> Male
+                    </span>
+
+                    <span>
+                        <input type="radio" name="gender" value="Female"> Female
+                    </span>
                 </div>
 
                 <div class="form-row">

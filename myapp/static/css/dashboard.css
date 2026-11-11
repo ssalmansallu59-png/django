@@ -1,0 +1,92 @@
+
+/* Dashboard Page */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0eaff, #f5e7ff, #e0f7fa);
+    color: #334155;
+}
+
+/* Dashboard Heading */
+
+h1 {
+    text-align: center;
+    color: #312e81;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 40px 0 30px;
+}
+
+/* Data Display */
+
+table {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(51, 65, 85, 0.12);
+}
+
+/* Table Header */
+
+table th {
+    padding: 18px 15px;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Table Data */
+
+table td {
+    padding: 16px 15px;
+    font-size: 14px;
+    color: #475569;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Alternate Rows */
+
+table tr:nth-child(even) {
+    background: #f8faff;
+}
+
+/* Hover Effect */
+
+table tr:hover {
+    background: #ede9fe;
+    transition: 0.3s ease;
+}
+
+/* Last Row */
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsive Table */
+
+@media (max-width: 768px) {
+    table {
+        width: 95%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    table th,
+    table td {
+        padding: 13px 12px;
+        font-size: 12px;
+    }
+}

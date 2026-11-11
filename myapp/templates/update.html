@@ -1,0 +1,172 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+
+<section class="registration-section">
+    <div class="registration-container">
+
+        <div class="registration-info">
+            <span class="welcome-tag">UPDATE YOUR PROFILE</span>
+
+            <h1>Manage Your <span>Account.</span></h1>
+
+            <p>
+                Keep your personal information up to date.
+                Update your details and manage your account easily.
+            </p>
+
+            <div class="registration-benefits">
+                <div class="benefit">
+                    <span class="benefit-icon">✓</span>
+                    <span>Update your personal details</span>
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">✓</span>
+                    <span>Manage your profile information</span>
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">✓</span>
+                    <span>Keep your account up to date</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="registration-form-card">
+
+            <div class="form-heading">
+                <h2>Update Profile</h2>
+                <p>Edit your account information below.</p>
+            </div>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <!-- Profile Image -->
+                <div class="form-group">
+                    <label for="file">Profile Image</label>
+
+                    {% if data.image %}
+                        <img src="{{ data.image.url }}"
+                             style="width:100px;height:80px;object-fit:cover;"
+                             alt="Profile Image">
+                    {% endif %}
+
+                    <input type="file" id="file" name="image" >
+                </div>
+
+                <!-- Full Name and Username -->
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text"
+                               id="fullname"
+                               name="fullname"
+                               value="{{ data.fullname }}"
+                               placeholder="Enter your full name"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text"
+                               id="username"
+                               name="username"
+                               value="{{ data.username }}"
+                               placeholder="Enter username"
+                               required>
+                    </div>
+
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           value="{{ data.email }}"
+                           placeholder="Enter email address"
+                           required>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel"
+                           id="phone"
+                           name="phone"
+                           value="{{ data.phone }}"
+                           pattern="[0-9]{10}"
+                           maxlength="10"
+                           placeholder="Enter phone number"
+                           required>
+                </div>
+
+                <!-- Gender -->
+                <div class="form-radio">
+                    <label>Gender</label>
+
+                    <span>
+                        <input type="radio"
+                               name="gender"
+                               value="Male"
+                               {% if data.gender == 'Male' %}checked{% endif %}
+                               required>
+                        Male
+                    </span>
+
+                    <span>
+                        <input type="radio"
+                               name="gender"
+                               value="Female"
+                               {% if data.gender == 'Female' %}checked{% endif %}>
+                        Female
+                    </span>
+                </div>
+
+                <!-- Password -->
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="password">New Password</label>
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Enter new password" value="{{ data.password }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password"
+                               id="confirm_password"
+                               name="confirm_password"
+                               placeholder="Confirm new password">
+                    </div>
+
+                </div>
+
+                <!-- Update Button -->
+                <button type="submit" class="register-button">
+                    Update Profile <span>→</span>
+                </button>
+
+                <p class="login-text">
+                    Want to go back?
+                    <a href="{% url 'home' %}">Home</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

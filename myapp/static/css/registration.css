@@ -74,6 +74,10 @@
     font-weight: 500;
 }
 
+
+
+
+
 .benefit-icon {
     display: flex;
     align-items: center;
@@ -132,6 +136,44 @@
     font-weight: 600;
 }
 
+
+/* Gender Radio Buttons */
+
+.form-radio {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.form-radio > label {
+    color: #a4c5e6;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.form-radio span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #d5d6d7;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form-radio input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    accent-color: #7c3aed;
+    cursor: pointer;
+}
+
+
+
+
 .form-group input {
     display: block;
     width: 100%;
@@ -142,11 +184,13 @@
     border-radius: 9px;
     outline: none;
     background: #f8faff;
-    color: #1e293b;
+    color: #00060c;
     font-family: inherit;
     font-size: 12px;
     transition: 0.3s ease;
 }
+
+
 
 .form-group input::placeholder {
     color: #a0aabd;

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}     
+        <form method="POST" enctype="multipart/form-data">
+           {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="file">Product Imagess</label>
+                <input type="file" id="file" name="image" required>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Product Name</label>
+                <input type="text" id="name" name="product_name" placeholder="Enter product name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Product Price</label>
+                <input type="number" id="price" name="price" step="0.01" placeholder="0.00" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Product Description</label>
+                <textarea id="description" name="product_description" placeholder="Write product description here..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Add Product</button>
+        </form>
+{% endblock %}
